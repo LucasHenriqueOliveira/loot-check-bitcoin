@@ -1,3 +1,6 @@
+# Loot Check - React, Redux, and Jest
+Simple app developed in React, Redux, and Jest using Test Driven Development.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
