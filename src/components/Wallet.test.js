@@ -15,4 +15,20 @@ describe('Wallet', () => {
     it('Displays the balance from props', () => {
         expect(wallet.find('.balance').text()).toEqual('Wallet balance: 20');
     });
+
+    it('Creates an input to deposit into or withdraw from the balance', () => {
+        expect(wallet.find('.input-wallet').exists()).toBe(true);
+    });
+
+    describe('When the user types into the wallet input', () => {
+        const userBalance = '25';
+
+        beforeEach(() => {
+            wallet.find('.input-wallet').simulate('change', { target: { value: userBalance } });
+        });
+
+        it('Updates the local balance in `state` and converts it to a number', () => {
+            expect(wallet.state().balance).toEqual(parseInt(userBalance, 10));
+        });
+    });
 });
